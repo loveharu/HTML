@@ -1,0 +1,26 @@
+.class1{
+    color: blue;
+    font-size: 15px;
+}
+.class2{
+    color:antiquewhite;
+    font-size: 15;
+    background-color: aqua;
+}
+#oh{
+
+    color: aqua;
+    font-size: 156;
+    background-color: beige;
+}
+#named{
+    color: blueviolet;
+    font-size: 122;
+    text-align: center;
+}
+#redcurry{
+    color:red;
+    font-size: 150;
+    text-align: left;
+
+}
