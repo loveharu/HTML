@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자판기 프로그램</title>
+   
+    <style>
+        button {
+            width: 40px;
+            height: 15px;
+            font-size: 7px;
+
+        }
+
+        td {
+
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1px" width="500px" height="500px">
+        <tr>
+            <th colspan="4" bgcolor="eeeeee" height="50px">
+                <font color="red">자</font>
+                <font color="orange">판</font>
+                <font color="green">기</font>
+            </th>
+        </tr>
+        <tr align=center height="130">
+            <td><img src="img/콜라.jpg" width="50"><br><button id="BtnCola" onclick="M(1,1200)">1200원</button></td>
+            <td><img src="img/사이다.jpg" width="50"><br><button id="BtnCyder"onclick="M(2,1100)">1100원</button></td>
+            <td><img src="img/환타.jpg" width="50"><br><button id="BtnFanta"onclick="M(3,1000)">1000원</button></td>
+            <td align="top" width="100">
+                <input type="button" id="Btn1000" value="1000원" style="WIDTH: 60pt; HEIGHT: 20pt" onclick="M(0,1000)"><br>
+                <input type="button" id ="Btn500"value="500원" style="WIDTH: 60pt; HEIGHT: 20pt" onclick="M(0,500)"><br>
+                <input type="button" id = "Btn100" value="100원" style="WIDTH: 60pt; HEIGHT: 20pt"onclick="M(0,100)"><br>
+                <input type="text" value="투입 금액" id="f1" style="WIDTH: 60pt; HEIGHT: 20pt" readonly>
+            </td>
+        </tr>
+        <tr align=center height="130">
+            <td><img src="img/블랙.gif" width="50"><br><button  onclick="M(4,400)">400￦</button></td>
+            <td><img src="img/블랙.gif" width="50" ><br><button onclick="M(5,400)">400￦</button></td>
+            <td><img src="img/블랙.gif" width="50"><br><button onclick="M(6,400)">400￦</button></td>
+            <td><input type="button" id="payBackBtn" value="잔돈 반환" style="WIDTH: 60pt; HEIGHT: 20pt" onclick="RM()" ><br></td>
+        </tr>
+        <tr>
+            <td colspan="3" id="f2"></td>
+            <td><font size ="2px">500원</font> 
+                <input type="text"  id="f3" style="WIDTH: 20pt; HEIGHT: 20pt" readonly>개
+                <br>
+                <font size ="2px">100원</font>
+                <input type="text" id="f4" style="WIDTH: 20pt; HEIGHT: 20pt" readonly>개
+
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        
+        var TM=0;
+        function M(type,inputBill){
+            str="";
+            if(type==0){
+                TM+=inputBill;
+            }else{
+                if(TM>=inputBill){
+                    TM-=inputBill;
+                    if(type==1){
+                        str+="<img src='img/콜라.jpg'  width='50'>"
+                    }else if(type==2){
+                        str+="<img src='img/사이다.jpg' width='50'>"
+                    }else if(type==3){
+                        str+="<img src='img/환타.jpg' width='50' height='100'>"
+                    }else{
+                         str+="<img src='img/블랙.gif'  width='65' height='90'>"
+                    }
+                }else{
+                    alert("금액이 부족합니다.")
+                }
+            }
+            document.getElementById("f2").innerHTML+=str;
+            document.getElementById("f1").value=TM+"원";
+        }
+
+        function RM(){
+            C5count=0;
+            C1count=0;
+            while(true){    
+                if(TM>=500){
+                    TM=TM-500;
+                    C5count++;
+                }else if(TM>=100){
+                    TM=TM-100;
+                    C1count++
+                }else{
+                    break;
+                }
+            }
+            document.getElementById("f1").value=TM+"원";
+            document.getElementById("f3").value=C5count;
+            document.getElementById("f4").value=C1count;
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

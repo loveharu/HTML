@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+</head>
+
+<body>
+    <h1><strong>휴먼 호텔 숙박 요금 계산 프로그램</strong></h1>
+    체크인<input type="date" id="checkIn"> <br>
+    체크아웃<input type="date" id="checkOut"> <br>
+    인원수<input type="text" id="howMany"><br>
+    룸 선택<br>
+    <div id="roomChoose">
+        싱글<input type="radio" id="single" value="single" name="roomChoose">
+        더블<input type="radio" id="double" value="double"name="roomChoose">
+        트윈<input type="radio" id="twin" value="twin" name="roomChoose">
+        파티<input type="radio" id="party" value="party"name="roomChoose">
+        스위트<input type="radio" id="suit" value="suit" name="roomChoose">
+    </div>
+    <br>룸 서비스
+    <div id="roomServices">
+    <br>조식<input type="checkbox" id="roomService" value="조식">
+    중식<input type="checkbox" id="roomService" value="중식">
+    저녁<input type="checkbox" id="roomService" value="저녁">
+    과자<input type="checkbox" id="roomService" value="과자">
+    술<input type="checkbox" id="roomService" value="술">
+    모닝콜<input type="checkbox" id="roomService" value="모닝콜">
+    <div>
+
+    <br>
+    <input type="button" id="payBtn" value="숙박 요금 계산">
+    <input type="text" id="payText" value="0">
+
+    <script>
+        const checkDate = document.getElementById("checkIn");
+        const outDate = document.getElementById("checkOut");
+        const userCount = document.getElementById("howMany");
+        const roomChooses = document.getElementsByName("roomChoose");
+        const roomServices = document.getElementsByName("roomService");
+        const sendBtn = document.getElementById("payBtn");
+        const payText = document.getElementById("payText");
+
+
+
+
+    </script>
+</body>
+
+</html>
