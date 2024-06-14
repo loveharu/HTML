@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        font {
+            font-size: 1px;
+        }
+    </style>
+    <title>Letter</title>
+</head>
+
+<body>
+    <script>
+        const arr = []
+        madeTable(11, 70, arr)
+        colorTable(arr);
+
+
+        function colorTable(arr) {
+            for (var i = 10; i <= 14; i++) {
+                document.getElementById("y1x" + i).setAttribute("bgcolor", "red")
+            }
+            for (var i = 25; i <= 27; i++) {
+                document.getElementById("y1x" + i).setAttribute("bgcolor", "red")
+                document.getElementById("y9x" + i).setAttribute("bgcolor", "red")
+                document.getElementById("y0x" + i).setAttribute("bgcolor", "pink")
+
+            }
+            for (var i = 31; i <= 34; i++) {
+                for (var j = 0; j <= 8; j++)
+                    document.getElementById("y" + j + "x" + i).setAttribute("bgcolor", "pink")
+            }
+            for (var i = 25; i <= 27; i++) {
+                for (var j = 2; j <= 8; j++)
+                    document.getElementById("y" + j + "x" + i).setAttribute("bgcolor", "pink")
+            }
+            document.getElementById("y1x24").setAttribute("bgcolor", "pink")
+            document.getElementById("y1x28").setAttribute("bgcolor", "pink")
+            for (var i = 2; i <= 7; i++) {
+                document.getElementById("y" + i + "x23").setAttribute("bgcolor", "pink")
+                document.getElementById("y" + i + "x36").setAttribute("bgcolor", "pink")
+            }
+            for (var i = 2; i <= 10; i++) {
+                document.getElementById("y" + i + "x29").setAttribute("bgcolor", "pink")
+            }
+            for (var i = 1; i <= 9; i++) {
+                document.getElementById("y" + i + "x12").setAttribute("bgcolor", "red")
+            }
+            for (var i = 2; i <= 8; i++) {
+                document.getElementById("y" + i + "x24").setAttribute("bgcolor", "red")
+                document.getElementById("y" + i + "x28").setAttribute("bgcolor", "red")
+            }
+            for (var i = 1; i <= 9; i++) {
+                document.getElementById("y" + i + "x37").setAttribute("bgcolor", "red")
+            }
+            document.getElementById("y8x30").setAttribute("bgcolor", "pink")
+            for (var i = 27; i <= 31; i++) {
+                document.getElementById("y10x" + i).setAttribute("bgcolor", "pink")
+            }
+            for (var i = 28; i <= 31; i++) {
+                document.getElementById("y9x" + i).setAttribute("bgcolor", "pink")
+            }
+
+            for (var i = 1; i <= 7; i++) {
+                document.getElementById("y" + i + "x30").setAttribute("bgcolor", "red")
+            }
+            for (var i = 37; i <= 41; i++) {
+                document.getElementById("y1x" + i).setAttribute("bgcolor", "red");
+                document.getElementById("y5x" + i).setAttribute("bgcolor", "red");
+                document.getElementById("y9x" + i).setAttribute("bgcolor", "red")
+            }
+            for (var i = 1; i <= 7; i++) {
+                document.getElementById("y" + i + "x35").setAttribute("bgcolor", "red")
+            }
+            document.getElementById("y8x31").setAttribute("bgcolor", "red")
+            document.getElementById("y9x32").setAttribute("bgcolor", "red")
+            document.getElementById("y9x33").setAttribute("bgcolor", "red")
+            document.getElementById("y8x34").setAttribute("bgcolor", "red")
+
+            for (var i = 1; i <= 8; i++) {
+                document.getElementById("y" + i + "x43").setAttribute("bgcolor", "red")
+                document.getElementById("y" + i + "x48").setAttribute("bgcolor", "red")
+            }
+            document.getElementById("y8x44").setAttribute("bgcolor", "red")
+            document.getElementById("y9x45").setAttribute("bgcolor", "red")
+            document.getElementById("y9x46").setAttribute("bgcolor", "red")
+            document.getElementById("y8x47").setAttribute("bgcolor", "red")
+            for (var i = 10; i <= 14; i++) {
+                document.getElementById("y9x" + i).setAttribute("bgcolor", "red")
+            }
+            for (var i = 18; i <= 22; i++) {
+                document.getElementById("y9x" + i).setAttribute("bgcolor", "red")
+            }
+
+            for (var i = 1; i <= 9; i++) {
+                document.getElementById("y" + i + "x18").setAttribute("bgcolor", "red")
+            }
+        }
+
+
+        function madeTable(ROW, COLUMN, arr) {
+            arr = new Array(ROW);
+            for (let i = 0; i < ROW; i++) {
+                arr[i] = new Array(COLUMN).fill(null);
+            }
+            var str = "";
+            str += "<table border=1 width=800 height=200>";
+            for (var y = 0; y < arr.length; y++) {
+                str += "<tr>"
+                for (var x = 0; x < arr[y].length; x++) {
+                    str += "<td id=y" + y + "x" + x + "></td>";
+
+                }
+                str += "</tr>";
+            }
+            str += "</table>";
+            document.write(str);
+
+        }
+
+        function moveLeft() {
+            for(go of arr){
+                 
+            }
+        }
+        // 오른쪽으로 이동하는 함수
+        function moveRight() {
+        }
+        // 위로 이동하는 함수
+        function moveUp() {
+        }
+        // 아래로 이동하는 함수
+        function moveDown() {
+        }
+        // 이동을 멈추는 함수
+        function stopMovement() {
+            // 모든 이동 방향의 interval을 정지하는 로직을 추가하세요
+        }
+        // 초기 상태로 리셋하는 함수
+        function resetTable() {
+            // tableMove 배열을 초기 상태로 되돌리고 테이블을 다시 그리는 코드를 작성하세요
+        }
+        function moveFater(){
+
+        }
+    
+        function moveSlower(){
+
+        }
+    </script>
+    <div margin top="100px">
+        <input type="button" id="moveLeft" value="왼쪽이동" onclick="moveLeft()">
+        <input type="button" id="moveReft" value="오른쪽이동" onclick="moveRight()"><br>
+        <input type="button" id="moveUp" value="위쪽이동" onclick="moveUp()">
+        <input type="button" id="moveDown" value="아래쪽이동"onclick="moveDown()"><br>
+        <input type="button" id="moveStop" value="정지"onclick="stopMovement()"><br>
+        <input type="button" id="moveFater" value="가속"onclick="moveFater()">
+        <input type="button" id="moveSlower" value="감속"onclick="moveSlower()">
+    </div>
+</body>
+
+</html>

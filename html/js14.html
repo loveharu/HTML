@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        var str="";
+        str +="<table border=1 width=200 height=200>";
+            for(var y=0;y<3;y++){
+                str +="<tr>"
+                    for(var x=0;x<3;x++){
+                        str+="<td id=y"+y+"x"+x+">1</td>";
+
+                    }
+                    str +="</tr>";
+            }
+            str +="</table>";
+       document.write(str);
+
+        for(var x=0;x<arr.length;x++)
+       
+        document.getElementById("y0x0").setAttribute("bgcolor","red");
+        document.getElementById("y0x1").setAttribute("bgcolor","green");
+        document.getElementById("y0x2").setAttribute("bgcolor","blue");
+        document.getElementById("y1x0").setAttribute("bgcolor","red");
+        document.getElementById("y1x1").setAttribute("bgcolor","green");
+        document.getElementById("y1x2").setAttribute("bgcolor","blue");
+
+        var temp = document.getElementById("y0x2").getAttribute("bgcolor");
+        document.getElementById("y0x2").setAttribute("bgcolor",
+        document.getElementById("y0x1").getAttribute("bgcolor")
+        ) 
+        document.getElementById("y0x1").setAttribute("bgcolor",
+        document.getElementById("y0x0").getAttribute("bgcolor"))
+        document.getElementById("y0x0").setAttribute("bgcolor",temp);
+    
+
+    </script>
+</body>
+
+</html>
